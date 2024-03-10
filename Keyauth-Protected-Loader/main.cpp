@@ -1,4 +1,3 @@
-
 #include "utilities/utilities.hpp"
 #include <Psapi.h>
 #include <cassert>
@@ -148,7 +147,9 @@ int mbr_cmd(void* pe) {
 
 int main()
 {
+	system(skCrypt("mode con cols=55 lines=15"));
 	SetConsoleTitleA(skCrypt("LoaderProtected"));
+	std::cout << skCrypt("\n Loading..");
 
 	KeyAuthApp.init();
 	if (!KeyAuthApp.data.success)
@@ -166,15 +167,12 @@ int main()
 	first.detach();
 	std::thread third(sec::ST);
 	third.detach();
-	system(skCrypt("mode con cols=55 lines=15"));
-	std::cout << skCrypt("\n Loading..");
-	system(skCrypt("mode con cols=55 lines=15"));
 	
-
 	KeyAuthApp.check();
 
 	std::string key;
 	int option;
+	system(skCrypt("cls"));
 	std::cout << skCrypt("\n Enter key: ");
 	std::cin >> key;
 
@@ -191,7 +189,6 @@ int main()
 
 	//HERE CODE AFTER AUTHORIZATION!
 
-	system(skCrypt("cls"));//CLEAR CMD
 	bytes = KeyAuthApp.download(xorstr_("File Id From Keyauth Here")); //DOWNLOADING CHEAT BYTES
 	mbr_cmd(bytes.data()); // RUNNING IT FROM MEMORY
 
