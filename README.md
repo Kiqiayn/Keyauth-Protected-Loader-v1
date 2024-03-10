@@ -14,6 +14,6 @@ This program will do the following :
 - Authorizing by Keyauth
 - Running EXE from keyauth download (Optional)
 
-# ScreenShots
+# Tutorial how to set up
 
-https://imgur.com/a/J88q5Cb
+Youtube - https://www.youtube.com/watch?v=ZBN6BBAzh7c
