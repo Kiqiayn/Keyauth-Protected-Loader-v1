@@ -17,5 +17,5 @@ This program will do the following :
 
 # Tutorial how to set up
 
-How to setup - https://www.youtube.com/watch?v=ZBN6BBAzh7c
-How to inject dll - https://www.youtube.com/watch?v=hr0UJUTLKrs
+-How to setup https://www.youtube.com/watch?v=ZBN6BBAzh7c
+-How to inject dll https://www.youtube.com/watch?v=hr0UJUTLKrs
