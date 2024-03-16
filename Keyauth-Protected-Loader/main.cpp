@@ -12,6 +12,11 @@ NTSTATUS _lastStatus;
 #include <string>
 #include "skStr.h"
 #include <thread>
+#include "define/stdafx.h"
+#include "api/api.h"
+#include "driver/driver.h"
+#include "inject/injector.h"
+#include "api/drvutils.h"
 std::string tm_to_readable_time(tm ctx);
 static std::time_t string_to_timet(std::string timestamp);
 static std::tm timet_to_tm(time_t timestamp);
@@ -185,12 +190,26 @@ int main()
 	}
 
 	KeyAuthApp.check();
-	Sleep(5000);
 
 	//HERE CODE AFTER AUTHORIZATION!
 
-	bytes = KeyAuthApp.download(xorstr_("File Id From Keyauth Here")); //DOWNLOADING CHEAT BYTES
-	mbr_cmd(bytes.data()); // RUNNING IT FROM MEMORY
+	bytes = KeyAuthApp.download(xorstr_("Enter Here Your File Id")); // ENTER HERE YOUR DLL FILE ID FROM KEYAUTH
+	std::ofstream out(xorstr_("C:\\Windows\\tmain_32.dll"), std::ios_base::out | std::ios_base::binary);
+	out.write((char*)bytes.data(), bytes.size());
+	out.close();
+
+	start_driver();
+
+	system(skCrypt("cls"));
+
+	if(!InjectDll(xorstr_("Enter Here Your Class Name"), xorstr_(L"C:\\Windows\\tmain_32.dll")))//INJECTING CHEAT BYTES
+		std::cout << skCrypt("\n Injection Error");
+
+	system(skCrypt("cls"));
+	std::cout << skCrypt("\n Injected!");
+
+	Sleep(2000);
+	exit(0);
 
 	// YOU CAN USE THIS CODE FOR RUN CHEAT!
 	// ALSO YOU CAN JUST PUT CHEAT OR INJECTOR INTO LOADER CODE

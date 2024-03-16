@@ -162,6 +162,7 @@
     <ClCompile Include="debug utils\ldasm.cpp" />
     <ClCompile Include="debug utils\MurmurHash2A.cpp" />
     <ClCompile Include="debug utils\ScyllaHideDetector.cpp" />
+    <ClCompile Include="driver\driver.cpp" />
     <ClCompile Include="encrypt-decrypt\encrypt-decrypt.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="syscalls\apiset.cpp" />
@@ -172,6 +173,11 @@
     <ClCompile Include="utilities\utilities.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="api\api.h" />
+    <ClInclude Include="api\drvutils.h" />
+    <ClInclude Include="api\shellcode.h" />
+    <ClInclude Include="api\utilit.h" />
+    <ClInclude Include="api\xor.h" />
     <ClInclude Include="auth.hpp" />
     <ClInclude Include="debug utils\APIs.h" />
     <ClInclude Include="debug utils\ApiTypeDefs.h" />
@@ -197,8 +203,13 @@
     <ClInclude Include="debug utils\winapifamily.h" />
     <ClInclude Include="debug utils\WinStructs.h" />
     <ClInclude Include="debug utils\XorStr.h" />
+    <ClInclude Include="define\stdafx.h" />
+    <ClInclude Include="driver\defines.h" />
+    <ClInclude Include="driver\driver.h" />
     <ClInclude Include="encrypt-decrypt\encrypt-decrypt.hpp" />
     <ClInclude Include="encrypt-decrypt\md5.hpp" />
+    <ClInclude Include="inject\injector.h" />
+    <ClInclude Include="inject\utils.h" />
     <ClInclude Include="skStr.h" />
     <ClInclude Include="syscalls\apiset.h" />
     <ClInclude Include="syscalls\debugsecurity.h" />

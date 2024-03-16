@@ -75,6 +75,9 @@
     <ClCompile Include="utilities\utilities.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="driver\driver.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="skStr.h">
@@ -195,6 +198,36 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="auth.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="api\xor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="api\drvutils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="api\shellcode.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="api\utilit.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="api\api.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="define\stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="driver\defines.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="driver\driver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="inject\injector.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="inject\utils.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

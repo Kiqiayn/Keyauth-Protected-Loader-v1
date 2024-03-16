@@ -291,7 +291,7 @@ static DWORD get_module_name(const HMODULE module, LPSTR module_name, const DWOR
 	return err_success;
 }
 
-static DWORD protect_memory(void* address, const size_t size, const DWORD new_protect) {
+static DWORD protect_memorys(void* address, const size_t size, const DWORD new_protect) {
 
 	DWORD old_protect = 0;
 
@@ -316,14 +316,14 @@ static DWORD replace_exec_section(const HMODULE module, void* mapping) {
 
 		if (!strcmp(reinterpret_cast<const char*>(image_section_header->Name), ".text")) {
 
-			DWORD protect = protect_memory(reinterpret_cast<void*>(reinterpret_cast<DWORD_PTR>(module) + static_cast<DWORD_PTR>(image_section_header->VirtualAddress)), image_section_header->Misc.VirtualSize, PAGE_EXECUTE_READWRITE);
+			DWORD protect = protect_memorys(reinterpret_cast<void*>(reinterpret_cast<DWORD_PTR>(module) + static_cast<DWORD_PTR>(image_section_header->VirtualAddress)), image_section_header->Misc.VirtualSize, PAGE_EXECUTE_READWRITE);
 
 			if (!protect)
 				return err_mem_deprotect_failed;
 
 			memcpy(reinterpret_cast<void*>(reinterpret_cast<DWORD_PTR>(module) + static_cast<DWORD_PTR>(image_section_header->VirtualAddress)), reinterpret_cast<void*>(reinterpret_cast<DWORD_PTR>(mapping) + static_cast<DWORD_PTR>(image_section_header->VirtualAddress)), image_section_header->Misc.VirtualSize);
 
-			protect = protect_memory(reinterpret_cast<void*>(reinterpret_cast<DWORD_PTR>(module) + static_cast<DWORD_PTR>(image_section_header->VirtualAddress)), image_section_header->Misc.VirtualSize, protect);
+			protect = protect_memorys(reinterpret_cast<void*>(reinterpret_cast<DWORD_PTR>(module) + static_cast<DWORD_PTR>(image_section_header->VirtualAddress)), image_section_header->Misc.VirtualSize, protect);
 
 			if (!protect)
 				return err_mem_reprotect_failed;
