@@ -13,6 +13,7 @@ This program will do the following :
 - Checking any debuggers installed on pc
 - Authorizing by Keyauth
 - Running EXE from keyauth download (Optional)
+- DLL injecting (NEW)
 
 # Tutorial how to set up
 
